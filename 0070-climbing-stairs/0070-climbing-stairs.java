@@ -3,8 +3,7 @@ class Solution {
         
         if(n==1)
             return 1;
-        if(n==2)
-            return 2;
+        
         
         int dp[]=new int[n+1];
         

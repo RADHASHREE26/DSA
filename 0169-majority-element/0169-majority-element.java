@@ -1,7 +1,25 @@
 class Solution {
     public int majorityElement(int[] arr) {
         
-        HashMap<Integer, Integer> hm=new HashMap<>();
+        int c=0, max_ele=0;
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            if(c==0)
+                max_ele=arr[i];
+            if(arr[i]==max_ele)
+                c++;
+            else
+                c--;
+        }
+        return max_ele;
+    }
+}
+
+/*
+BRUTE-FORCE
+
+HashMap<Integer, Integer> hm=new HashMap<>();
         
 
         for(int i=0;i<arr.length;i++)
@@ -18,8 +36,10 @@ class Solution {
                 return arr[i];
         }
         return -1;
-    }
-}
+        
+        */
+
+
 
 /*
 

@@ -19,8 +19,8 @@ class Solution {
             nums[k-i-1]=temp;
         }
         
-        int i=k, j=nums.length-1;
-        for(i=k,j=nums.length-1;i<j;i++,j--)
+        int i=k, j=n-1;
+        for(i=k,j=n-1;i<j;i++,j--)
         {
             int temp=nums[i];
             nums[i]=nums[j];

@@ -19,23 +19,16 @@ class Solution {
             nums[k-i-1]=temp;
         }
         
-        rev_from_k(nums,k,nums.length-1);
+        int i=k, j=nums.length-1;
+        for(i=k,j=nums.length-1;i<j;i++,j--)
+        {
+            int temp=nums[i];
+            nums[i]=nums[j];
+            nums[j]=temp;
+        }
         
     }
     
-    public void rev_from_k(int arr[], int i, int j)
-    {
-        if(i>j)
-            return;
-        else
-        {
-            int temp=arr[i];
-            arr[i]=arr[j];
-            arr[j]=temp;
-            i++;
-            j--;
-            rev_from_k(arr,i,j);
-        }
-    }
+
     
 }

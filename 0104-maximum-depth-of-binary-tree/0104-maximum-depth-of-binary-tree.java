@@ -19,7 +19,7 @@ class Solution {
         if(root==null)
             return 0;
         else
-            return 1+Math.max(maxDepth(root.left),maxDepth(root.right));
+            return 1+Math.max(maxDepth(root.left), maxDepth(root.right));
         
     }
 }
@@ -31,3 +31,12 @@ if(root==null)
         return 1+ Math.max(maxDepth(root.left),maxDepth(root.right));
         
         */
+
+/*
+
+if(root==null)
+            return 0;
+        else
+            return 1+Math.max(maxDepth(root.left),maxDepth(root.right));
+            
+            */

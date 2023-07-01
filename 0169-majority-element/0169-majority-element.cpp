@@ -16,10 +16,10 @@ public:
         
         int no_of_occ=n/2;
         
-        for(int i=0;i<n;i++)
+        for(int i=0;i<hm.size();i++)
         {
-            if(hm[arr[i]]>no_of_occ)
-                return arr[i];
+            if(hm[i]>no_of_occ)
+                return i;
         }
         
         return -1;

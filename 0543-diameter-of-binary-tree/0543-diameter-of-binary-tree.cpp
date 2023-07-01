@@ -35,26 +35,3 @@ public:
     }
     
 };
-
-/*
-
- if(root==null)
-        return 0;
-
-        int dl=diameterOfBinaryTree(root.left);
-        int dr=diameterOfBinaryTree(root.right);
-
-        int lh=height(root.left);
-        int rh=height(root.right);
-
-        int d=lh+rh+1;
-
-        return Math.max(d,Math.max(dl,dr));
-        
-    }
-
-    public int height(TreeNode root)
-    {
-        if(root==null)
-        return 0;
-        return 1+Math.max(height(root.left),height(root.right));*/

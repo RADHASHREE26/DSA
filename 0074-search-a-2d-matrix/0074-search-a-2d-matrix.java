@@ -5,7 +5,7 @@ class Solution {
         int n=matrix[0].length-1;
         for(int i=0;i<matrix.length;i++)
         {
-            if(matrix[i][0]<=target && matrix[i][n]>=target)
+            if(matrix[i][n]>=target)
             {
                 res=binarySearch(matrix[i], target);            
                 if(res)

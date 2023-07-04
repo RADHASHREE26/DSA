@@ -18,33 +18,50 @@ class Solution {
         
         ListNode dummy=new ListNode(0,null);
         ListNode temp=dummy;
+        ListNode prev=null;
+        ListNode nex=null;
         
+        if(list1.val<list2.val)
+        {
+            prev=list1;
+            list1=list1.next;
+        }
+        else
+        {
+            prev=list2;
+            list2=list2.next;
+        }
         while(list1!=null && list2!=null)
         {
             if(list1.val<list2.val)
             {
-                temp.next=list1;
+                temp.next=prev;
+                temp=prev;
+                prev.next=list1;
+                prev=prev.next;
                 list1=list1.next;
             }
             else
             {
-                temp.next=list2;
+                temp.next=prev;
+                temp=prev;
+                prev.next=list2;
+                prev=prev.next;
                 list2=list2.next;
             }
-            temp=temp.next;
         }
-        
         if(list1!=null)
         {
-            temp.next=list1;
+            prev.next=list1;
+            temp.next=prev;
         }
-        
         if(list2!=null)
         {
-            temp.next=list2;
+            prev.next=list2;
+            temp.next=prev;
         }
-        
         return dummy.next;
+        
         
     }
 }

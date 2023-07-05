@@ -19,7 +19,6 @@ class Solution {
         ListNode dummy=new ListNode(0,null);
         ListNode temp=dummy;
         ListNode prev=null;
-        ListNode nex=null;
         
         if(list1.val<list2.val)
         {

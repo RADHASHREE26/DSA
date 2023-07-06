@@ -10,7 +10,31 @@
  */
 class Solution {
     public ListNode oddEvenList(ListNode head) {
+
+        if (head == null || head.next == null) return head;
         
+        ListNode p1 = head, p2 = head.next;
+        ListNode s_head = head.next;
+        
+        while (p1 != null && p2 != null && p1.next != null && p2.next != null) {
+            
+            p1.next = p1.next.next;
+            p1 = p1.next;
+            
+            p2.next = p2.next.next;
+            p2 = p2.next;
+            
+        }
+        
+        p1.next = s_head;
+        
+        return head;
+        
+    }
+}
+
+/*
+
         ListNode dummy1=new ListNode(0,null);
         ListNode dummy2=new ListNode(0,null);
         ListNode temp1=dummy1;
@@ -39,5 +63,4 @@ class Solution {
 
         return dummy1.next;
         
-    }
-}
+        */

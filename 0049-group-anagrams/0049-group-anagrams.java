@@ -1,6 +1,31 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         
+        HashMap<String, List<String>> hs=new HashMap<>();
+        for(int i=0;i<strs.length;i++)
+        {
+            String s=strs[i];
+            char[] arr=s.toCharArray();
+            Arrays.sort(arr);
+            String st=new String(arr);
+            
+            if(!hs.containsKey(st))
+                hs.put(st, new LinkedList<String>());
+            hs.get(st).add(s);
+            
+        }
+        
+        return new LinkedList<>(hs.values());
+        
+    }
+    
+}
+
+/*
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        
         List<List<String>> res=new ArrayList<>();
         
         for(int i=0;i<strs.length;i++)
@@ -61,3 +86,5 @@ class Solution {
     }
     
 }
+
+*/

@@ -29,7 +29,6 @@ class Solution {
         helper(i+1,j,al,ad,res);
         ad.remove(ad.size()-1);
         helper(i+1,j,al,ad,res);
-        return;
     }
     
 }

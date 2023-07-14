@@ -16,49 +16,32 @@
 class Solution {
     public List<String> binaryTreePaths(TreeNode root) {
         
-        List<String> ans = new ArrayList<>();
+        List<String> al=new ArrayList<>();
+        String s="";
+        paths(root,al,s);
         
-        helper (root, "", ans);
-        
-        return ans;
+        return al;
         
     }
     
-    public void helper (TreeNode root, String sub, List<String> ans) {
+    public void paths(TreeNode node, List<String> al, String s)
+    {
+        if(node==null)
+            return;
+        s=s+node.val+"->";
         
-        if (root.left == null && root.right == null) {
-            sub=sub+root.val;
-            ans.add(sub);
-        }
-        /*
-        
-         if (root.left != null) {
-            
-            sub = sub + root.val + "->";
-            helper (root.left, sub, ans);
-            
-        }
-        
-        if (root.right != null) {
-            
-            sub = sub + root.val + "->";
-            helper (root.right, sub, ans);
-            
-        }
-        */
-
-        
-        /*if (root.left != null && root.right!=null) 
+        if(node.left==null && node.right==null)
         {
-            helper (root.left, sub+root.val+"->", ans);
-            helper (root.right, sub+root.val+"->", ans);
-        }*/
-        if(root.left!=null)
-            helper (root.left, sub+root.val+"->", ans);
+            s=s.substring(0,s.length()-2);
+            al.add(s);
+            return;
+        }
         
-        if(root.right != null)
-            helper (root.right, sub+root.val+"->", ans);
+        paths(node.left,al,s);
+        paths(node.right,al,s);
+        
     }
+    
 }
 
 /*
@@ -94,4 +77,32 @@ class Solution {
     
 }
 
+*/
+
+/*
+
+class Solution {
+    public List<String> binaryTreePaths(TreeNode root) {
+        
+        List<String> ans = new ArrayList<>();
+        
+        helper (root, "", ans);
+        
+        return ans;
+        
+    }
+    
+    public void helper (TreeNode root, String sub, List<String> ans) {
+        
+        if (root.left == null && root.right == null) {
+            sub=sub+root.val;
+            ans.add(sub);
+        }
+        if(root.left!=null)
+            helper (root.left, sub+root.val+"->", ans);
+        
+        if(root.right != null)
+            helper (root.right, sub+root.val+"->", ans);
+    }
+}
 */

@@ -10,14 +10,16 @@ class Solution {
                 if(st.isEmpty()==false && st.peek()==s.charAt(i))
                 {
                     st.pop();
-                    s=s.substring(0,i-1)+s.substring(i+1);
-                    i=i-2;
                 }
                 else
                     st.push(s.charAt(i));
             }
 
+        s="";
+        for(int i=st.size()-1;i>=0;i--)
+        {
+            s=st.pop()+s;
+        }
         return s;
-        
     }
 }

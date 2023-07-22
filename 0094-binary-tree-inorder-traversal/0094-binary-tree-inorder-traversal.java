@@ -23,7 +23,7 @@ class Solution {
             al.add(root.val);
             inorderTraversal(root.right);
         }
-        return al;
+        return al ;
     }
 }
 

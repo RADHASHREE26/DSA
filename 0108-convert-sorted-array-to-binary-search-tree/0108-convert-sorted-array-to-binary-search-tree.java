@@ -29,7 +29,7 @@ class Solution {
             int mid=l+(r-l)/2;
             TreeNode n=new TreeNode(arr[mid]);
             n.left=helper(arr,l,mid-1);
-            n.right=helper(arr,mid+1,r);
+            n.right = helper(arr,mid+1,r);
             return n;
         }
         return null;

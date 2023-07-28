@@ -14,9 +14,64 @@
  * }
  */
 class Solution {
+    
+    Integer prev=null;
+    int c=1;
+    int max=0;
+    
     public int[] findMode(TreeNode root) {
         
         ArrayList<Integer> al=new ArrayList<>();
+        traverse(root,al);
+        int res[]=new int[al.size()];
+        
+        for(int i=0;i<al.size();i++)
+        {
+            res[i]=al.get(i);
+        }
+        
+        return res;
+        
+    }
+    
+    public void traverse(TreeNode root, ArrayList<Integer> al)
+    {
+        if(root==null)
+            return;
+        
+        traverse(root.left,al);
+        
+        if(prev!=null)
+        {
+            if(prev==root.val)
+            {
+                c++;
+            }
+            else
+            {
+                c=1;
+            }
+        }
+        
+        prev=root.val;
+        
+        if(c>max)
+        {
+            max=c;
+            al.clear();
+            al.add(root.val);
+        }
+        else if(c==max)
+            al.add(root.val);
+        
+        traverse(root.right,al);
+    }
+    
+}
+
+/*
+
+ArrayList<Integer> al=new ArrayList<>();
         allnodes(root,al);
         
         HashMap<Integer, Integer> hs=new HashMap<>();
@@ -55,4 +110,4 @@ class Solution {
         
     }
     
-}
+    */

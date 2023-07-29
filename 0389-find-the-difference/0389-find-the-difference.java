@@ -14,7 +14,7 @@ class Solution {
         for(int i=0;i<26;i++)
         {
             if(ar[i]==1)
-                return (char)(i+'a');
+                return (char)(i+'a') ;
         }
         
         return ' ';

@@ -1,7 +1,30 @@
 class Solution {
     public char findTheDifference(String s, String t) {
         
-        HashMap<Character, Integer> hs=new HashMap<>();
+        int ar[]=new int[26];
+        
+        for(int i=0;i<s.length();i++)
+        {
+            ar[t.charAt(i)-'a']++;
+            ar[s.charAt(i)-'a']--;
+        }
+        
+        ar[t.charAt(t.length()-1)-'a']++;
+        
+        for(int i=0;i<26;i++)
+        {
+            if(ar[i]==1)
+                return (char)(i+'a');
+        }
+        
+        return ' ';
+        
+    }
+}
+
+/*
+
+HashMap<Character, Integer> hs=new HashMap<>();
         
         for(int i=0;i<s.length();i++)
         {
@@ -19,5 +42,4 @@ class Solution {
         
         return ' ';
         
-    }
-}
+        */

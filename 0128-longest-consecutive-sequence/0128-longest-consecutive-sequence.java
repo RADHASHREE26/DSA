@@ -19,8 +19,7 @@ class Solution {
             max=Math.max(c,max);
         }
         
-        return max;
-        
+        return max ;
     }
 }
 

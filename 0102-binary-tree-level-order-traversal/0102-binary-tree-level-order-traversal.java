@@ -41,8 +41,7 @@ class Solution {
                 
             }
             
-            res.add(al);
-            
+            res.add(al) ;
         }
         
         return res;
